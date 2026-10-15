@@ -1,0 +1,47 @@
+.bars {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: var(--spacing-2);
+  align-items: end;
+}
+
+.col {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+}
+
+.track {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  max-width: 44px;
+  height: 90px;
+  border-radius: var(--radius);
+  background: var(--muted);
+  overflow: hidden;
+}
+
+.fill {
+  width: 100%;
+  min-height: 3px;
+  background: var(--primary);
+  border-radius: var(--radius);
+}
+
+.value {
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--muted-foreground);
+}
+
+.sub {
+  font-size: 0.7rem;
+  color: var(--muted-foreground);
+}

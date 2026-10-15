@@ -1,0 +1,116 @@
+import type { Topic } from "./curriculumTypes";
+
+export const g8RatioRate: Topic = {
+  id: "ratio-rate",
+  name: "Ratio and rate",
+  strand: "Numbers, Operations and Relationships",
+  term: 3,
+  order: 11,
+  icon: "Scale",
+  summary: "Comparing amounts with ratios, sharing in a ratio, and rates such as speed and price per item.",
+  whatYouLearn: ["Writing and simplifying ratios", "Sharing an amount in a given ratio", "Unit rates and speed", "Direct proportion"],
+  priorKnowledge: ["Fractions and simplifying", "Multiplying and dividing whole numbers", "Units of measurement"],
+  prerequisites: ["common-fractions"],
+  videoQueries: ["Grade 8 mathematics ratio and rate CAPS South Africa", "Grade 8 maths sharing in a ratio South Africa", "Grade 8 maths direct proportion South Africa"],
+  assessmentNote: "Tests usually include simplifying ratios, sharing amounts in a ratio, rate problems and direct proportion.",
+  placement: { source: "author-knowledge", note: "Ratio and rate sits in Term 1 in some teacher planners and Term 3 in others. It is shown in Term 3 here; check your school's annual teaching plan." },
+  subtopics: [
+    {
+      id: "ratio-simplify",
+      name: "Writing and simplifying ratios",
+      objectives: ["I can write a ratio to compare two amounts.", "I can simplify a ratio.", "I can find missing numbers in equivalent ratios."],
+      priorKnowledge: ["Simplifying fractions"],
+      prerequisites: ["frac-equiv"],
+      generator: "ratio-simplify",
+      realWorld: "A drink is mixed 1 part juice to 4 parts water: the ratio 1 : 4.",
+      terms: [
+        { word: "Ratio", meaning: "A way of comparing two or more amounts. We write it with a colon, like 2 : 3." },
+        { word: "Equivalent ratios", meaning: "Different ratios that compare in the same way, like 1 : 2 and 3 : 6." },
+      ],
+      rules: ["Order matters: 2 : 3 is not the same as 3 : 2.", "Simplify by dividing BOTH parts by the same number.", "Both amounts must be in the same units."],
+      explain: [
+        { heading: "Comparing with a ratio", body: "A ratio compares amounts. If there are 6 girls and 9 boys, the ratio of girls to boys is 6 : 9. The order matters, so say it in the order the question asks.", example: "$6 : 9$" },
+        { heading: "Simplifying", body: "Divide both parts by the same number, just like simplifying a fraction. 6 : 9 becomes 2 : 3 when we divide both by 3.", example: "$6 : 9 = 2 : 3$" },
+        { heading: "Equivalent ratios", body: "To find an equivalent ratio, MULTIPLY both parts by the same number.", example: "$2 : 3 = 4 : 6 = 10 : 15$" },
+        { heading: "Same units first", body: "You can only compare amounts that are in the same units. Change one of them first.", example: "$50 cm : 2 m = 50 : 200 = 1 : 4$" },
+      ],
+      altExplain: [{ heading: "Recipe for pancakes", body: "2 cups of flour to 3 cups of milk (2 : 3). For a double batch you need 4 cups flour and 6 cups milk (4 : 6). The taste is the same because the ratio is the same." }],
+      workedExamples: [
+        {
+          title: "Simplify with units",
+          problem: "Simplify $150 cm : 3 m$",
+          steps: [
+            { title: "Same units", say: "3 m = 300 cm.", math: "$150 : 300$", ask: { prompt: "How many cm are in 3 m?", answer: "300" } },
+            { title: "Divide both by 150", say: "150 ÷ 150 = 1 and 300 ÷ 150 = 2.", math: "$1 : 2$" },
+          ],
+          answer: "$1 : 2$",
+        },
+      ],
+      mistakes: [{ tag: "ratio.units", mistake: "Comparing amounts in different units (like cm and m).", fix: "Change both to the same unit before you simplify." }],
+    },
+    {
+      id: "ratio-share",
+      name: "Sharing in a ratio",
+      objectives: ["I can share an amount in a given ratio.", "I can solve problems with two or three parts."],
+      priorKnowledge: ["Simplifying ratios", "Division"],
+      prerequisites: ["ratio-simplify"],
+      generator: "ratio-share",
+      realWorld: "Two friends share a prize in the ratio of the hours each worked.",
+      terms: [{ word: "Share", meaning: "One equal part of the total. A ratio 2 : 3 has 5 shares altogether." }],
+      rules: ["Add the parts to find the total number of shares.", "Divide the total amount by the number of shares to get ONE share.", "Multiply one share by each person's number of shares."],
+      explain: [
+        { heading: "Add the parts", body: "In the ratio 2 : 3, one person gets 2 shares and the other 3 shares. Add them: 2 + 3 = 5 shares altogether.", example: "$2 + 3 = 5$ shares" },
+        { heading: "Find one share", body: "Divide the total amount by the total number of shares. This is the value of ONE share.", example: "R200 ÷ 5 = R40 per share" },
+        { heading: "Multiply to get each person's amount", body: "Multiply the value of one share by each person's number of shares.", example: "$2 × 40 = 80$  and  $3 × 40 = 120$.  Check: $80 + 120 = 200$ ✓" },
+      ],
+      altExplain: [{ heading: "Hand out sweets in turn", body: "For the ratio 2 : 3, give 2 sweets to Thabo, then 3 sweets to Lerato, and repeat. Keep going until the sweets run out. Each round uses 5 sweets." }],
+      workedExamples: [
+        {
+          title: "Share R300 in the ratio 2 : 3",
+          problem: "Thabo and Lerato share R300 in the ratio 2 : 3. How much does Lerato get?",
+          steps: [
+            { title: "Add the parts", say: "2 + 3 = 5 shares.", math: "$2 + 3 = 5$", ask: { prompt: "What is 2 + 3?", answer: "5" } },
+            { title: "One share", say: "R300 ÷ 5 = R60.", math: "$300 ÷ 5 = 60$" },
+            { title: "Lerato's share", say: "Lerato has 3 shares.", math: "$3 × 60 = 180$" },
+            { title: "Check", say: "Thabo gets 2 × 60 = 120. 120 + 180 = 300 ✓" },
+          ],
+          answer: "$R180$",
+        },
+      ],
+      mistakes: [{ tag: "ratio.shareEqually", mistake: "Splitting the amount equally between the people.", fix: "The ratio tells us the shares are different sizes." }],
+    },
+    {
+      id: "rate-prop",
+      name: "Rate and direct proportion",
+      objectives: ["I can work out a unit rate.", "I can calculate speed, distance and time.", "I can solve direct proportion problems."],
+      priorKnowledge: ["Ratio", "Multiplication and division"],
+      prerequisites: ["ratio-simplify"],
+      generator: "rate-prop",
+      realWorld: "Comparing the price per kilogram of two different packs to find the better deal.",
+      terms: [
+        { word: "Rate", meaning: "A ratio that compares two different kinds of things, like rand per kilogram or km per hour." },
+        { word: "Unit rate", meaning: "The rate for ONE unit, like the price of 1 loaf." },
+        { word: "Direct proportion", meaning: "When one amount goes up, the other goes up in the same way (double the kg, double the cost)." },
+      ],
+      rules: ["Unit rate = total ÷ number of items.", "Speed = distance ÷ time.", "Distance = speed × time."],
+      explain: [
+        { heading: "Unit rate", body: "A unit rate tells us the amount for ONE. Divide the total by the number of items.", example: "4 loaves cost R48 →  $48 ÷ 4 = R12$ for one loaf" },
+        { heading: "Speed, distance and time", body: "Speed is the distance travelled in one hour. If a car travels 120 km in 2 hours, it travels 60 km each hour.", example: "$speed = distance ÷ time = 120 ÷ 2 = 60 km/h$" },
+        { heading: "Direct proportion", body: "If one amount doubles, the other doubles too. Find the unit rate first, then multiply.", example: "3 kg cost R45. 1 kg costs R15. 5 kg cost $5 × 15 = R75$." },
+      ],
+      altExplain: [{ heading: "The 'one' method", body: "Whenever you are stuck, ask: what is it for ONE? Once you know the price of one, you can find the price of any number by multiplying." }],
+      workedExamples: [
+        {
+          title: "Direct proportion",
+          problem: "5 kg of oranges cost R85. How much do 8 kg cost?",
+          steps: [
+            { title: "Cost of 1 kg", say: "R85 ÷ 5 = R17.", math: "$85 ÷ 5 = 17$", ask: { prompt: "What is 85 ÷ 5?", answer: "17" } },
+            { title: "Cost of 8 kg", say: "8 × R17.", math: "$8 × 17 = 136$" },
+          ],
+          answer: "$R136$",
+        },
+      ],
+      mistakes: [{ tag: "rate.unitFirst", mistake: "Multiplying the cost by 8 instead of finding the cost of one kilogram first.", fix: "Always go through ONE: divide first, then multiply." }],
+    },
+  ],
+};

@@ -1,0 +1,118 @@
+import type { Topic } from "./curriculumTypes";
+
+export const g8Exponents: Topic = {
+  id: "exponents",
+  name: "Exponents",
+  strand: "Numbers, Operations and Relationships",
+  term: 2,
+  order: 6,
+  icon: "Superscript",
+  summary: "Powers: a short way of writing repeated multiplication, squares, cubes, roots and the laws of exponents.",
+  whatYouLearn: ["What a power is (base and exponent)", "Squares, cubes, square roots and cube roots", "The laws of exponents for multiplying, dividing and power of a power"],
+  priorKnowledge: ["Multiplication facts", "Order of operations (BODMAS)"],
+  prerequisites: ["whole-numbers"],
+  videoQueries: ["Grade 8 mathematics exponents CAPS South Africa", "Grade 8 maths laws of exponents South Africa", "Grade 8 maths squares cubes square roots cube roots South Africa"],
+  assessmentNote: "Tests usually include calculating powers, square and cube roots and simple exponent law questions.",
+  placement: { source: "secondary-sources", note: "A CAPS workbook tracker places exponents in Term 2; some other planners place it in Term 1. The laws of exponents are included here because they appear in Grade 8 resources, but confirm the exact scope (and any scientific notation) against the official CAPS document." },
+  subtopics: [
+    {
+      id: "exp-meaning",
+      name: "What is a power?",
+      objectives: ["I can write repeated multiplication as a power.", "I can calculate a power."],
+      priorKnowledge: ["Multiplication"],
+      prerequisites: [],
+      generator: "exp-meaning",
+      realWorld: "Computer storage and population growth use powers.",
+      terms: [
+        { word: "Base", meaning: "The number that is multiplied by itself." },
+        { word: "Exponent", meaning: "The small raised number. It tells us how many times the base is written." },
+        { word: "Power", meaning: "The whole thing: base and exponent together, like 2³." },
+      ],
+      rules: ["a^n means a multiplied by itself n times.", "a^1 = a.", "Powers of 10: 10^n is 1 followed by n zeros."],
+      explain: [
+        { heading: "A short way to write repeated multiplication", body: "Instead of writing 2 × 2 × 2 × 2 we write 2⁴. The big number is the **base**. The small raised number is the **exponent**. It counts how many times the base is written.", example: "$2^4 = 2 × 2 × 2 × 2 = 16$" },
+        { heading: "Be careful: a power is not times", body: "2⁴ does NOT mean 2 × 4. It means 2 × 2 × 2 × 2. They give different answers: 2 × 4 = 8 but 2⁴ = 16.", example: "$2^4 = 16$   but   $2 × 4 = 8$" },
+        { heading: "Powers of 10", body: "Powers of 10 are easy. The exponent tells you how many zeros come after the 1.", example: "$10^3 = 1 000$    $10^5 = 100 000$" },
+      ],
+      altExplain: [{ heading: "Growing by doubling", body: "Fold a paper in half again and again. After 1 fold: 2 layers. After 2 folds: 4. After 3 folds: 8. That is 2¹, 2², 2³. Each fold multiplies by another 2." }],
+      workedExamples: [
+        {
+          title: "Calculate 3^4",
+          problem: "Calculate $3^4$",
+          steps: [
+            { title: "Write it out", say: "The base is 3 and the exponent is 4. Write 3 four times.", math: "$3 × 3 × 3 × 3$" },
+            { title: "Multiply two at a time", say: "3 × 3 = 9. Then 9 × 3 = 27. Then 27 × 3 = 81.", math: "$9;  27;  81$", ask: { prompt: "What is 9 × 3?", answer: "27" } },
+          ],
+          answer: "$81$",
+        },
+      ],
+      mistakes: [{ tag: "exp.multiplyNotRepeat", mistake: "Calculating 3⁴ as 3 × 4 = 12.", fix: "Write the base out 4 times and multiply: 3 × 3 × 3 × 3." }],
+    },
+    {
+      id: "exp-roots",
+      name: "Squares, cubes and roots",
+      objectives: ["I know the squares up to 12² and the cubes up to 10³.", "I can find square roots and cube roots."],
+      priorKnowledge: ["Powers"],
+      prerequisites: ["exp-meaning"],
+      generator: "exp-roots",
+      realWorld: "The area of a square with side 5 m is 5² = 25 m².",
+      terms: [
+        { word: "Square", meaning: "A number multiplied by itself, like 5² = 25." },
+        { word: "Cube", meaning: "A number multiplied by itself three times, like 2³ = 8." },
+        { word: "Square root", meaning: "The number that multiplied by itself gives the original. √25 = 5." },
+        { word: "Cube root", meaning: "The number that used three times in a multiplication gives the original. ∛8 = 2." },
+      ],
+      rules: ["Square roots and squares are opposites.", "Cube roots and cubes are opposites."],
+      explain: [
+        { heading: "Squares", body: "A square number is a number multiplied by itself. It is called a square because it is the area of a square with that side length.", example: "$1; 4; 9; 16; 25; 36; 49; 64; 81; 100; 121; 144$" },
+        { heading: "Square roots", body: "A square root asks the opposite question: which number times itself gives this number? √49 = 7 because 7 × 7 = 49.", example: "$√49 = 7$" },
+        { heading: "Cubes and cube roots", body: "A cube number is a number used THREE times in a multiplication. A cube root goes the other way.", example: "$2^3 = 8$,   $∛8 = 2$   $10^3 = 1 000$,   $∛1 000 = 10$" },
+      ],
+      altExplain: [{ heading: "Squares and cubes of blocks", body: "A square: a 3 by 3 grid of blocks needs 9 blocks (3²). A cube: a 3 by 3 by 3 tower needs 27 blocks (3³). The root is the side length of the square or cube." }],
+      workedExamples: [
+        {
+          title: "Estimating a square root",
+          problem: "Between which two whole numbers is $√50$?",
+          steps: [
+            { title: "Find squares around 50", say: "7² = 49 and 8² = 64.", math: "$7^2 = 49;  8^2 = 64$" },
+            { title: "Place 50", say: "50 is between 49 and 64.", math: "$49 < 50 < 64$" },
+            { title: "Take the roots", say: "So √50 is between 7 and 8 (very close to 7).", math: "$7 < √50 < 8$" },
+          ],
+          answer: "7 and 8",
+        },
+      ],
+      mistakes: [{ tag: "exp.rootHalf", mistake: "Thinking √16 = 8 (halving the number).", fix: "A square root is NOT half. √16 = 4 because 4 × 4 = 16." }],
+    },
+    {
+      id: "exp-laws",
+      name: "Laws of exponents",
+      objectives: ["I can multiply powers with the same base.", "I can divide powers with the same base.", "I can work out a power of a power."],
+      priorKnowledge: ["What a power means"],
+      prerequisites: ["exp-meaning"],
+      generator: "exp-laws",
+      realWorld: "These laws are shortcuts for working with very large and very small numbers.",
+      terms: [{ word: "Law of exponents", meaning: "A rule that always works for powers with the same base." }],
+      rules: ["a^m × a^n = a^(m+n)", "a^m ÷ a^n = a^(m−n)", "(a^m)^n = a^(m×n)", "a^0 = 1"],
+      explain: [
+        { heading: "Multiplying powers: ADD the exponents", body: "Write them out. 2³ × 2² = (2 × 2 × 2) × (2 × 2). That is five 2s, so 2⁵. We added the exponents: 3 + 2 = 5. This only works when the BASES are the same.", example: "$2^3 × 2^2 = 2^5$" },
+        { heading: "Dividing powers: SUBTRACT the exponents", body: "2⁵ ÷ 2² means five 2s on top and two 2s on the bottom. Two of them cancel, leaving three. So 2³.", example: "$2^5 ÷ 2^2 = 2^3$" },
+        { heading: "A power of a power: MULTIPLY the exponents", body: "(2³)² means 2³ written twice: 2³ × 2³ = 2⁶. We multiplied the exponents: 3 × 2 = 6.", example: "$(2^3)^2 = 2^6$" },
+        { heading: "The zero exponent", body: "Any number (except 0) to the power 0 is 1. Why? 5³ ÷ 5³ = 1, but by the subtract rule it is 5⁰. So 5⁰ = 1.", example: "$5^0 = 1$" },
+      ],
+      altExplain: [{ heading: "Count the copies", body: "When you are unsure, always write the powers out in full and count how many copies of the base there are. The laws are just shortcuts for counting." }],
+      workedExamples: [
+        {
+          title: "Mixed laws",
+          problem: "Simplify $(3^4 × 3^2) ÷ 3^3$",
+          steps: [
+            { title: "Bracket first (multiply: add)", say: "4 + 2 = 6.", math: "$3^6 ÷ 3^3$", ask: { prompt: "What is 4 + 2?", answer: "6" } },
+            { title: "Divide (subtract)", say: "6 − 3 = 3.", math: "$3^3$" },
+            { title: "Calculate", say: "3 × 3 × 3 = 27.", math: "$27$" },
+          ],
+          answer: "$3^3 = 27$",
+        },
+      ],
+      mistakes: [{ tag: "exp.laws.multiplyExponents", mistake: "Multiplying the exponents when multiplying powers (2³ × 2² = 2⁶).", fix: "When multiplying powers with the same base, ADD the exponents: 2³ × 2² = 2⁵." }],
+    },
+  ],
+};

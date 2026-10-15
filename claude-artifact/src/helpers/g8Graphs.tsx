@@ -1,0 +1,121 @@
+import type { Topic } from "./curriculumTypes";
+
+export const g8Graphs: Topic = {
+  id: "graphs",
+  name: "Graphs",
+  strand: "Patterns, Functions and Algebra",
+  term: 3,
+  order: 12,
+  icon: "LineChart",
+  summary: "The Cartesian plane, plotting points, straight-line graphs and reading graphs that tell a story.",
+  whatYouLearn: ["Reading and plotting points on the Cartesian plane", "Drawing a straight-line graph from a table of values", "Reading and understanding graphs that tell a story"],
+  priorKnowledge: ["Integers and the number line", "Tables of values and formulae"],
+  prerequisites: ["functions-relationships", "integers"],
+  videoQueries: ["Grade 8 mathematics Cartesian plane graphs CAPS South Africa", "Grade 8 maths straight line graphs table of values South Africa"],
+  assessmentNote: "Tests usually include plotting and reading points, drawing a graph from a table and answering questions about graphs.",
+  placement: { source: "author-knowledge", note: "Graphs is placed in Term 3 here; some planners include it with functions in Term 2. Check the school plan." },
+  subtopics: [
+    {
+      id: "gr-plane",
+      name: "The Cartesian plane",
+      objectives: ["I can read the coordinates of a point.", "I can say which quadrant a point is in.", "I can find a missing corner of a shape on the plane."],
+      priorKnowledge: ["Integers on a number line"],
+      prerequisites: ["int-order"],
+      generator: "gr-plane",
+      realWorld: "Maps use a grid with coordinates to find places.",
+      terms: [
+        { word: "Cartesian plane", meaning: "A flat surface with a horizontal x-axis and a vertical y-axis crossing at 0." },
+        { word: "Coordinates (x; y)", meaning: "A pair of numbers that gives a point's position: along first (x), then up or down (y)." },
+        { word: "Origin", meaning: "The point (0; 0) where the axes cross." },
+        { word: "Quadrant", meaning: "One of the four parts the axes divide the plane into." },
+      ],
+      rules: ["Write coordinates as (x; y): along first, then up or down.", "Quadrants are numbered 1 to 4 anti-clockwise starting at the top right."],
+      explain: [
+        { heading: "Two number lines cross", body: "The Cartesian plane has two number lines. The horizontal one is the x-axis. The vertical one is the y-axis. They cross at the origin, (0; 0).", visual: { type: "coordplane", points: [{ x: 0, y: 0, label: "O" }], range: 5 } },
+        { heading: "Reading a point", body: "Always go ALONG first (x), then UP or DOWN (y). A way to remember: 'along the corridor, then up the stairs'.", example: "$(3; 2)$ means 3 along and 2 up", visual: { type: "coordplane", points: [{ x: 3, y: 2, label: "A" }], range: 5 } },
+        { heading: "Four quadrants", body: "The axes split the plane into four quadrants, numbered anti-clockwise from the top right. Top right: x and y are both positive. Top left: x negative, y positive. Bottom left: both negative. Bottom right: x positive, y negative." },
+      ],
+      altExplain: [{ heading: "Battleship", body: "In the game Battleship you say a letter and a number to find a ship. Coordinates work the same way: two numbers tell you exactly where to look. The order matters: (3; 2) and (2; 3) are different places." }],
+      workedExamples: [
+        {
+          title: "Fourth corner of a rectangle",
+          problem: "A(−2; 1), B(3; 1) and C(3; 4) are corners of a rectangle. Find D.",
+          steps: [
+            { title: "x of D", say: "A and D are on the same vertical side, so D has the same x as A.", math: "$x = −2$" },
+            { title: "y of D", say: "C and D are on the same horizontal side, so D has the same y as C.", math: "$y = 4$", ask: { prompt: "What is the y-coordinate of C?", answer: "4" } },
+            { title: "Write D", say: "", math: "$D(−2; 4)$" },
+          ],
+          answer: "$D(−2; 4)$",
+        },
+      ],
+      mistakes: [{ tag: "gr.swapXY", mistake: "Swapping the x and y coordinates.", fix: "Along first (x), then up (y)." }],
+    },
+    {
+      id: "gr-linear",
+      name: "Straight-line graphs",
+      objectives: ["I can complete a table of values for a rule.", "I can check if a point lies on a line.", "I can read values from a straight-line graph."],
+      priorKnowledge: ["Substitution", "Plotting points"],
+      prerequisites: ["gr-plane", "func-formula"],
+      generator: "gr-linear",
+      realWorld: "A graph of money saved each week is a straight line going up.",
+      terms: [
+        { word: "Table of values", meaning: "A table that pairs each x with its y from a rule." },
+        { word: "Linear graph", meaning: "A graph that is a straight line." },
+      ],
+      rules: ["Use the rule to find y for each x.", "Plot each (x; y) point and join them with a straight line.", "A point is on the line if its x and y make the rule true."],
+      explain: [
+        { heading: "From a rule to points", body: "Choose some x values. Put each into the rule to find y. Each pair is a point on the graph.", example: "y = 2x + 1:  x = 0 → y = 1;  x = 1 → y = 3;  x = 2 → y = 5" },
+        { heading: "Join the points", body: "Plot the points on the Cartesian plane. If they are linked by a rule like y = 2x + 1, they lie on a straight line.", visual: { type: "coordplane", points: [{ x: 0, y: 1 }, { x: 1, y: 3 }, { x: 2, y: 5 }], line: { m: 2, c: 1 }, range: 6 } },
+        { heading: "Reading a graph", body: "To find y for a given x: find x on the horizontal axis, go up or down to the line, then go across to the y-axis and read the number." },
+      ],
+      altExplain: [{ heading: "Walking steps", body: "For y = 2x + 1: start at the point (0; 1). Every step 1 to the right, go 2 up. That 'right 1, up 2' is the steepness of the line." }],
+      workedExamples: [
+        {
+          title: "Table of values",
+          problem: "Complete the table for $y = 2x − 1$ when $x = −1; 0; 1; 2$.",
+          steps: [
+            { title: "x = −1", say: "2 × (−1) − 1 = −3.", math: "$y = −3$" },
+            { title: "x = 0", say: "2 × 0 − 1 = −1.", math: "$y = −1$" },
+            { title: "x = 1", say: "2 × 1 − 1 = 1.", math: "$y = 1$", ask: { prompt: "What is 2 × 1 − 1?", answer: "1" } },
+            { title: "x = 2", say: "2 × 2 − 1 = 3.", math: "$y = 3$" },
+          ],
+          answer: "$−3; −1; 1; 3$",
+        },
+      ],
+      mistakes: [{ tag: "gr.linear.joinWrong", mistake: "Joining the points with a wavy line or only some of them.", fix: "For a linear rule, all points lie on ONE straight line." }],
+    },
+    {
+      id: "gr-interpret",
+      name: "Reading graphs that tell a story",
+      objectives: ["I can read values from bar and line graphs.", "I can say what a graph shows in words.", "I can choose a suitable graph for data."],
+      priorKnowledge: ["Reading scales"],
+      prerequisites: [],
+      generator: "gr-interpret",
+      realWorld: "Graphs in newspapers and on the news tell stories about prices, weather and sports.",
+      terms: [
+        { word: "Axis", meaning: "The horizontal or vertical line with a scale on it." },
+        { word: "Scale", meaning: "The numbers that show the size of each step on an axis." },
+      ],
+      rules: ["Read the title and the axes first.", "Going UP means the amount is increasing.", "A FLAT line means no change."],
+      explain: [
+        { heading: "Read the title and axes first", body: "Before you answer anything, read the title. Then look at what each axis shows and what the scale steps are.", visual: { type: "bars", labels: ["A", "B", "C"], values: [4, 9, 6], title: "Example graph" } },
+        { heading: "Reading a line graph", body: "On a line graph, time is usually on the x-axis. A line going UP means the amount is increasing. A line going DOWN means it is decreasing. A FLAT line means it is staying the same. A steeper line means a faster change." },
+        { heading: "Choosing a graph", body: "Bar graph: compare separate groups. Line graph: show change over time. Pie chart: show parts of a whole. Histogram: show how many values fall in each class (range)." },
+      ],
+      altExplain: [{ heading: "A bath filling", body: "Picture the water height in a bath. While the tap runs the line goes up. When you turn the tap off the line goes flat. When you pull the plug the line goes down. The graph tells the whole story." }],
+      workedExamples: [
+        {
+          title: "Distance-time",
+          problem: "On a distance-time graph, a flat line segment appears. What does it mean?",
+          steps: [
+            { title: "What does the vertical axis show?", say: "Distance from the start." },
+            { title: "What does flat mean?", say: "Time passes but the distance does not change." },
+            { title: "Conclusion", say: "The person is standing still." },
+          ],
+          answer: "The person is standing still",
+        },
+      ],
+      mistakes: [{ tag: "gr.interpret.axisMix", mistake: "Reading the wrong axis.", fix: "Check which axis shows what before reading a value." }],
+    },
+  ],
+};

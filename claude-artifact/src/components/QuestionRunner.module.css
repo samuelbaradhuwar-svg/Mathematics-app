@@ -1,0 +1,249 @@
+.runner {
+  display: grid;
+  gap: var(--spacing-4);
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-3);
+}
+
+.counter {
+  font-weight: 800;
+  color: var(--muted-foreground);
+}
+
+.level {
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background: var(--status-practising-soft);
+  color: var(--primary);
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+}
+
+.prompt {
+  padding: var(--spacing-4);
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.promptText {
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+.answerRow {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.input {
+  flex: 1;
+  min-height: 60px;
+  font-size: 1.4rem;
+  font-family: var(--font-family-math);
+  border-width: 2px;
+  border-radius: var(--radius-md);
+}
+
+.unit {
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--muted-foreground);
+}
+
+.choices {
+  display: grid;
+  gap: var(--spacing-3);
+}
+
+.choice {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  min-height: 60px;
+  padding: var(--spacing-3) var(--spacing-4);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--card);
+  color: var(--foreground);
+  font-family: var(--font-family-base);
+  font-size: 1.15rem;
+  text-align: left;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.choice:hover {
+  border-color: var(--primary);
+}
+
+.chosen {
+  border-color: var(--primary);
+  background: var(--status-practising-soft);
+}
+
+.radio {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2.5px solid var(--muted-foreground);
+}
+
+.chosen .radio {
+  border-color: var(--primary);
+  background: radial-gradient(circle, var(--primary) 45%, transparent 50%);
+}
+
+.feedback {
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--radius-md);
+  font-size: 1.05rem;
+}
+
+.info {
+  background: var(--surface);
+}
+
+.almost {
+  background: var(--status-help-soft);
+}
+
+.wrong {
+  background: var(--soft-wrong);
+}
+
+.right {
+  background: var(--soft-correct);
+}
+
+.revealedBox {
+  background: var(--status-practising-soft);
+}
+
+.fbText {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-2);
+  margin: 0;
+  font-weight: 700;
+}
+
+.checkIcon {
+  flex: none;
+  margin-top: 2px;
+  color: var(--status-understood);
+}
+
+.method {
+  display: flex;
+  gap: 6px;
+  align-items: flex-start;
+  margin: var(--spacing-2) 0 0;
+  font-size: 1rem;
+}
+
+.method svg {
+  flex: none;
+  margin-top: 3px;
+}
+
+.answerLine {
+  margin: var(--spacing-2) 0 0;
+  font-weight: 800;
+}
+
+.hints {
+  display: grid;
+  gap: var(--spacing-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hints li {
+  display: flex;
+  gap: var(--spacing-3);
+  align-items: flex-start;
+  padding: var(--spacing-3);
+  border-radius: var(--radius);
+  background: var(--status-help-soft);
+  line-height: 1.5;
+}
+
+.hintNum {
+  flex: none;
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  background: var(--warning);
+  color: var(--warning-foreground);
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.actions {
+  display: grid;
+  gap: var(--spacing-3);
+}
+
+.check {
+  min-height: 60px;
+  font-size: 1.2rem;
+}
+
+.secondary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+}
+
+.secondary > * {
+  flex: 1 1 160px;
+  min-height: 50px;
+}
+
+.done {
+  display: grid;
+  gap: var(--spacing-4);
+}
+
+.steps summary {
+  cursor: pointer;
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+}
+
+.stepList {
+  display: grid;
+  gap: var(--spacing-3);
+  margin-top: var(--spacing-3);
+}
+
+.event {
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--radius-md);
+  background: var(--accent);
+  color: var(--accent-foreground);
+  font-weight: 800;
+}
+
+.event:empty {
+  display: none;
+}
+
+.next {
+  min-height: 60px;
+  font-size: 1.2rem;
+}

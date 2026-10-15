@@ -1,0 +1,192 @@
+.wrap {
+  display: grid;
+  gap: var(--spacing-4);
+}
+
+.section {
+  display: grid;
+  gap: var(--spacing-3);
+}
+
+.h2 {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  font-size: 1.35rem;
+}
+
+.eyebrow {
+  margin: 0;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+.muted {
+  margin: 0;
+  color: var(--muted-foreground);
+}
+
+.question,
+.final,
+.practiceQ {
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--radius-md);
+  background: var(--status-practising-soft);
+  font-size: 1.3rem;
+  overflow-x: auto;
+}
+
+.final {
+  background: transparent;
+  padding: 0;
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
+.verify {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--radius-md);
+  font-weight: 700;
+}
+
+.verify svg {
+  flex: none;
+  margin-top: 2px;
+}
+
+.verifyGood {
+  background: var(--soft-correct);
+}
+
+.verifyWarn {
+  background: var(--status-help-soft);
+}
+
+.concepts {
+  display: grid;
+  gap: var(--spacing-3);
+}
+
+.concept {
+  display: grid;
+  gap: 2px;
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.concept strong {
+  font-family: var(--font-family-heading);
+  color: var(--primary);
+}
+
+.stepList {
+  display: grid;
+  gap: var(--spacing-3);
+}
+
+.btnRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+}
+
+.btnRow > * {
+  min-height: 54px;
+}
+
+.grow {
+  flex: 1;
+}
+
+.details {
+  padding: var(--spacing-3) var(--spacing-4);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--card);
+}
+
+.details summary {
+  cursor: pointer;
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.details > *:not(summary) {
+  margin-top: var(--spacing-3);
+}
+
+.answerLine {
+  margin: 0;
+  font-weight: 800;
+}
+
+.input {
+  min-height: 60px;
+  font-size: 1.35rem;
+  font-family: var(--font-family-math);
+}
+
+.choices {
+  display: grid;
+  gap: var(--spacing-2);
+}
+
+.choice {
+  min-height: 54px;
+  padding: var(--spacing-2) var(--spacing-4);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--card);
+  color: var(--foreground);
+  font-size: 1.1rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.chosen {
+  border-color: var(--primary);
+  background: var(--status-practising-soft);
+}
+
+.msg {
+  margin: 0;
+  padding: var(--spacing-3);
+  border-radius: var(--radius);
+  background: var(--soft-wrong);
+  font-weight: 700;
+}
+
+.hint {
+  padding: var(--spacing-3);
+  border-radius: var(--radius);
+  background: var(--status-help-soft);
+}
+
+.solved {
+  display: grid;
+  gap: var(--spacing-3);
+}
+
+.encourage {
+  margin: 0;
+  text-align: center;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.footerBtns {
+  display: grid;
+  gap: var(--spacing-2);
+}
+
+.footerBtns > * {
+  min-height: 54px;
+}

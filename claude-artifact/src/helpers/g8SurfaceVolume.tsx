@@ -1,0 +1,108 @@
+import type { Topic } from "./curriculumTypes";
+
+export const g8SurfaceVolume: Topic = {
+  id: "surface-volume",
+  name: "Surface area and volume",
+  strand: "Measurement",
+  term: 4,
+  order: 19,
+  icon: "Package",
+  summary: "The outside covering (surface area) and the space inside (volume) of cubes, prisms and cylinders.",
+  whatYouLearn: ["Surface area of cubes, rectangular prisms, triangular prisms and cylinders", "Volume of the same objects", "Changing between cm³, ml and litres"],
+  priorKnowledge: ["Area of rectangles, triangles and circles", "Nets of 3D objects", "Unit conversion"],
+  prerequisites: ["perimeter-area", "objects-3d"],
+  videoQueries: ["Grade 8 mathematics surface area and volume CAPS South Africa", "Grade 8 maths volume of prisms cylinders South Africa"],
+  assessmentNote: "Tests usually include surface area and volume of prisms and cylinders and capacity conversions in word problems.",
+  placement: { source: "secondary-sources", note: "Surface area and volume are taught late in Grade 8 and follow area, perimeter and 3D objects." },
+  subtopics: [
+    {
+      id: "sv-surface",
+      name: "Surface area",
+      objectives: ["I can find the surface area of a cube and a rectangular prism.", "I can find the surface area of a triangular prism and a cylinder using nets."],
+      priorKnowledge: ["Area of rectangles, triangles and circles", "Nets"],
+      prerequisites: ["g3d-nets", "pa-area"],
+      generator: "sv-surface",
+      realWorld: "How much wrapping paper is needed to cover a box.",
+      terms: [{ word: "Surface area", meaning: "The total area of all the faces of a 3D object." }],
+      rules: ["Cube: 6 × side × side.", "Rectangular prism: 2 × (lw + lh + wh).", "Cylinder: 2 × π × r² + 2 × π × r × h.", "Always think of the NET: add up the area of every shape."],
+      explain: [
+        { heading: "Cover the outside", body: "Surface area is the total area of ALL the faces. Imagine wrapping the object in paper: the amount of paper you need is the surface area.", visual: { type: "cuboid", l: 4, w: 3, h: 2 } },
+        { heading: "Use the net", body: "Draw the net. Find the area of each shape in the net. Add them all up. A rectangular prism has 3 pairs of identical faces: top/bottom, front/back and left/right.", example: "$2 × (lw + lh + wh)$" },
+        { heading: "Cylinders", body: "A cylinder net has 2 circles and 1 rectangle. The rectangle's length is the circumference of the circle and its width is the height.", example: "$2 × π × r^2 + 2 × π × r × h$" },
+      ],
+      altExplain: [{ heading: "Painting a cube", body: "A cube has 6 faces. If each face is 3 cm by 3 cm (9 cm²) then painting the whole cube covers 6 × 9 = 54 cm²." }],
+      workedExamples: [
+        {
+          title: "Rectangular prism",
+          problem: "Find the surface area of a prism 5 cm long, 3 cm wide and 2 cm high.",
+          steps: [
+            { title: "Top and bottom", say: "5 × 3 = 15.", math: "$15$" },
+            { title: "Front and back", say: "5 × 2 = 10.", math: "$10$" },
+            { title: "Left and right", say: "3 × 2 = 6.", math: "$6$", ask: { prompt: "What is 3 × 2?", answer: "6" } },
+            { title: "Add and double", say: "There are 2 of each: 2 × (15 + 10 + 6) = 2 × 31.", math: "$62 cm^2$" },
+          ],
+          answer: "$62 cm^2$",
+        },
+      ],
+      mistakes: [{ tag: "sv.surface.missingFaces", mistake: "Forgetting to double (there are two of each face).", fix: "Count all 6 faces: three pairs." }],
+    },
+    {
+      id: "sv-volume",
+      name: "Volume",
+      objectives: ["I can find the volume of a cube, rectangular prism, triangular prism and cylinder."],
+      priorKnowledge: ["Area", "Multiplying"],
+      prerequisites: ["pa-area"],
+      generator: "sv-volume",
+      realWorld: "How much water a swimming pool can hold.",
+      terms: [{ word: "Volume", meaning: "The amount of space inside a 3D object, measured in cubic units like cm³." }],
+      rules: ["Cube: s × s × s.", "Rectangular prism: l × w × h.", "Any prism: area of the base × height (or length).", "Cylinder: π × r² × h."],
+      explain: [
+        { heading: "Filling with cubes", body: "Volume counts how many 1 cm cubes fill the object. For a box 4 by 3 by 2 you can fit 4 × 3 = 12 cubes in the bottom layer and there are 2 layers: 24 cm³.", visual: { type: "cuboid", l: 4, w: 3, h: 2 }, example: "$4 × 3 × 2 = 24 cm^3$" },
+        { heading: "Prisms: base area × height", body: "A prism has the same shape all the way through. Volume = area of the end shape × length.", example: "Triangle end $½ × 4 × 3 = 6$, length 10:  $6 × 10 = 60 cm^3$" },
+        { heading: "Cylinders", body: "A cylinder is a prism with a circle as its end. Volume = π × r² × h.", example: "r = 2, h = 5:  $3,14 × 4 × 5 = 62,8 cm^3$" },
+      ],
+      altExplain: [{ heading: "Stack of coins", body: "A cylinder is like a stack of thin circular coins. The area of one coin is π r². Stack h coins and you get π r² × h." }],
+      workedExamples: [
+        {
+          title: "Triangular prism",
+          problem: "A triangular prism has a triangle end with base 6 cm and height 4 cm, and length 10 cm. Find its volume.",
+          steps: [
+            { title: "Area of the triangle", say: "½ × 6 × 4 = 12.", math: "$12 cm^2$", ask: { prompt: "What is ½ × 6 × 4?", answer: "12" } },
+            { title: "Multiply by the length", say: "12 × 10 = 120.", math: "$120 cm^3$" },
+          ],
+          answer: "$120 cm^3$",
+        },
+      ],
+      mistakes: [{ tag: "sv.surfaceForVolume", mistake: "Mixing up surface area and volume.", fix: "Surface area = outside (cm²). Volume = inside (cm³)." }],
+    },
+    {
+      id: "sv-capacity",
+      name: "Volume and capacity",
+      objectives: ["I know that 1 cm³ holds 1 ml.", "I can change between cm³, ml, litres and m³."],
+      priorKnowledge: ["Volume", "Unit conversion"],
+      prerequisites: ["sv-volume", "meas-convert"],
+      generator: "sv-capacity",
+      realWorld: "How many litres of water a fish tank holds.",
+      terms: [{ word: "Capacity", meaning: "How much liquid a container can hold, measured in ml and ℓ." }],
+      rules: ["1 cm³ = 1 ml.", "1 000 cm³ = 1 ℓ.", "1 m³ = 1 kℓ = 1 000 ℓ."],
+      explain: [
+        { heading: "Volume and capacity are linked", body: "A tiny cube 1 cm by 1 cm by 1 cm holds exactly 1 millilitre. So the volume in cm³ equals the capacity in ml.", example: "$1 cm^3 = 1 ml$" },
+        { heading: "To litres", body: "There are 1 000 ml in 1 litre, so 1 000 cm³ = 1 ℓ. Divide cm³ by 1 000 to get litres.", example: "$60 000 cm^3 ÷ 1 000 = 60 ℓ$" },
+        { heading: "Big tanks", body: "A cube 1 m by 1 m by 1 m is 1 m³. It holds 1 000 litres, which is 1 kilolitre.", example: "$1 m^3 = 1 000 ℓ = 1 kℓ$" },
+      ],
+      altExplain: [{ heading: "Think of a 1-litre box", body: "A box 10 cm × 10 cm × 10 cm has volume 1 000 cm³ and holds exactly 1 litre of milk. Any volume in cm³ can be compared with that box." }],
+      workedExamples: [
+        {
+          title: "Fish tank",
+          problem: "A tank is 50 cm long, 40 cm wide and 30 cm high. How many litres does it hold?",
+          steps: [
+            { title: "Volume in cm³", say: "50 × 40 × 30 = 60 000.", math: "$60 000 cm^3$", ask: { prompt: "What is 50 × 40 × 30?", answer: "60000" } },
+            { title: "Change to litres", say: "Divide by 1 000.", math: "$60 000 ÷ 1 000 = 60 ℓ$" },
+          ],
+          answer: "$60 ℓ$",
+        },
+      ],
+      mistakes: [{ tag: "sv.capacity.factor", mistake: "Dividing by 100 instead of 1 000 to change cm³ to litres.", fix: "1 litre = 1 000 cm³." }],
+    },
+  ],
+};

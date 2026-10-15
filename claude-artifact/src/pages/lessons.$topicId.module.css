@@ -1,0 +1,116 @@
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  display: grid;
+  gap: var(--spacing-4);
+}
+
+.block {
+  display: grid;
+  gap: var(--spacing-2);
+}
+
+.h2 {
+  margin: var(--spacing-2) 0 0;
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  font-size: 1.35rem;
+}
+
+.h3 {
+  margin: var(--spacing-3) 0 0;
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.list {
+  margin: 0;
+  padding-left: 1.3em;
+  display: grid;
+  gap: 4px;
+}
+
+.subs {
+  display: grid;
+  gap: var(--spacing-3);
+}
+
+.sub {
+  display: grid;
+  gap: var(--spacing-3);
+}
+
+.subTop {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.num {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+.subText {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.subName {
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+.objectives {
+  margin: 0;
+  padding-left: 1.3em;
+  color: var(--muted-foreground);
+  display: grid;
+  gap: 2px;
+}
+
+.reason {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-2);
+}
+
+@media (min-width: 520px) {
+  .actions {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.go {
+  min-height: 56px;
+}
+
+.video {
+  min-height: 56px;
+}
+
+.fine p {
+  margin: 0 0 var(--spacing-2);
+  font-size: 0.92rem;
+  color: var(--muted-foreground);
+}

@@ -1,0 +1,162 @@
+import type { Topic } from "./curriculumTypes";
+
+export const g8WholeNumbers: Topic = {
+  id: "whole-numbers",
+  name: "Whole numbers",
+  strand: "Numbers, Operations and Relationships",
+  term: 1,
+  order: 1,
+  icon: "Hash",
+  summary: "The rules of numbers, working out calculations in the right order, and factors and multiples.",
+  whatYouLearn: [
+    "The properties of whole numbers (commutative, associative, distributive, identity)",
+    "Calculating with all four operations and using the order of operations (BODMAS)",
+    "Multiples, factors, prime numbers, prime factorisation, LCM and HCF",
+    "Solving word problems with whole numbers",
+  ],
+  priorKnowledge: ["Times tables up to 12 × 12", "Adding and subtracting numbers with carrying and borrowing", "Place value (ones, tens, hundreds, thousands)"],
+  prerequisites: [],
+  videoQueries: ["Grade 8 mathematics whole numbers CAPS South Africa", "Grade 8 maths LCM HCF prime factorisation South Africa", "Grade 8 maths BODMAS order of operations South Africa"],
+  assessmentNote: "Tests usually mix calculations (including BODMAS), properties of numbers, prime factorisation and LCM/HCF word problems.",
+  placement: {
+    source: "secondary-sources",
+    note: "Whole numbers is a Term 1 topic in the DBE-linked Grade 8 navigation pack. Exact scope (e.g. LCM/HCF limit of 3-digit numbers) follows the CAPS Grades 7-9 document and should be double-checked against it.",
+  },
+  subtopics: [
+    {
+      id: "wn-properties",
+      name: "Properties of numbers",
+      objectives: ["I can name the four properties of numbers.", "I can use the properties to make a calculation easier."],
+      priorKnowledge: ["Add and multiply small numbers"],
+      prerequisites: [],
+      generator: "wn-properties",
+      realWorld: "A shopkeeper adds prices in any order and still gets the same total. That is the commutative property at work.",
+      terms: [
+        { word: "Property", meaning: "A rule that is always true for numbers." },
+        { word: "Commutative", meaning: "'Commute' means to move around. The numbers can swap places." },
+        { word: "Associative", meaning: "'Associate' means to group together. The brackets can move." },
+        { word: "Distributive", meaning: "'Distribute' means to share out. The number outside the bracket is shared out to every number inside." },
+        { word: "Identity", meaning: "A number that leaves another number unchanged (0 for adding, 1 for multiplying)." },
+      ],
+      rules: ["Adding and multiplying are commutative. Subtracting and dividing are NOT.", "Adding and multiplying are associative. Subtracting and dividing are NOT.", "a × (b + c) = a × b + a × c", "a + 0 = a and a × 1 = a"],
+      explain: [
+        { heading: "Numbers follow rules", body: "Numbers behave the same way every single time. These patterns are called **properties**. They work like the rules of a game, and knowing them makes calculations easier.", example: "$3 + 5 = 5 + 3$" },
+        { heading: "Swapping places: the commutative property", body: "When you ADD or MULTIPLY, you can swap the two numbers and the answer stays the same.", example: "$2 × 7 = 7 × 2 = 14$" },
+        { heading: "Moving the brackets: the associative property", body: "When you add or multiply THREE numbers, it does not matter which two you work out first. The brackets can move.", example: "$(2 + 3) + 4 = 2 + (3 + 4) = 9$" },
+        { heading: "The number outside the bracket: the distributive property", body: "A number outside a bracket multiplies EVERYTHING inside the bracket, one at a time.", example: "$3 × (4 + 5) = 3 × 4 + 3 × 5 = 27$" },
+        { heading: "Numbers that change nothing: the identity property", body: "Adding 0 to a number changes nothing. Multiplying a number by 1 changes nothing.", example: "$8 + 0 = 8$     $8 × 1 = 8$" },
+      ],
+      altExplain: [
+        { heading: "Socks and shoes", body: "Putting on your LEFT sock and your RIGHT sock: the order does not matter. That is like adding. But socks and shoes: the order DOES matter! Subtracting and dividing are like socks and shoes: the order matters, so they are NOT commutative." },
+        { heading: "Bags of sweets", body: "Imagine 3 bags. Each bag has 4 sweets and 5 chips. One way: count what is in one bag (4 + 5 = 9) and times by 3. Another way: count all the sweets (3 × 4) and all the chips (3 × 5) and add. Both give 27. That is the distributive property.", example: "$3 × (4 + 5) = 3 × 4 + 3 × 5$" },
+      ],
+      workedExamples: [
+        {
+          title: "Make it easier with properties",
+          problem: "Calculate $25 × 13 × 4$ using the properties of numbers.",
+          steps: [
+            { title: "Look for a friendly pair", say: "25 and 4 multiply to make 100, which is a very easy number.", why: "Round numbers like 100 are easy to multiply." },
+            { title: "Change the order (commutative)", say: "We can multiply in any order.", math: "$25 × 13 × 4 = 25 × 4 × 13$" },
+            { title: "Multiply the friendly pair", say: "25 × 4 = 100.", math: "$100 × 13$", ask: { prompt: "What is 25 × 4?", answer: "100" } },
+            { title: "Finish", say: "100 × 13 = 1 300.", math: "$100 × 13 = 1 300$" },
+          ],
+          answer: "$1 300$",
+        },
+      ],
+      mistakes: [
+        { tag: "wn.properties.subtraction", mistake: "Thinking that 8 − 3 is the same as 3 − 8.", fix: "Only adding and multiplying can swap places. Subtracting and dividing cannot." },
+        { tag: "wn.properties.distribute", mistake: "Multiplying only the first number inside the bracket.", fix: "The number outside multiplies EVERY number inside: 3 × (4 + 5) = 3 × 4 + 3 × 5." },
+      ],
+    },
+    {
+      id: "wn-calc",
+      name: "Calculating with whole numbers",
+      objectives: ["I can add, subtract, multiply and divide larger numbers step by step.", "I can use BODMAS to do a calculation in the right order."],
+      priorKnowledge: ["Times tables", "Place value"],
+      prerequisites: [],
+      generator: "wn-calc",
+      realWorld: "Working out the total cost of 12 boxes of 36 pencils, or sharing money fairly.",
+      terms: [
+        { word: "BODMAS", meaning: "The order we do a calculation: Brackets, Orders (powers), Division and Multiplication, Addition and Subtraction." },
+        { word: "Product", meaning: "The answer to a multiplication." },
+        { word: "Quotient", meaning: "The answer to a division." },
+      ],
+      rules: ["Brackets first.", "Then powers (like 3²).", "Then multiply and divide, working from left to right.", "Then add and subtract, working from left to right."],
+      explain: [
+        { heading: "Adding in columns", body: "Write the numbers under each other so that ones are under ones and tens under tens. Add each column from the right. If a column makes 10 or more, CARRY the extra to the next column.", example: "$478 + 256 = 734$" },
+        { heading: "Subtracting in small pieces", body: "Break the number you take away into hundreds, tens and ones, and take them away one at a time. This is easier than doing it all at once.", example: "$734 − 256$:  $734 − 200 = 534$,  $534 − 50 = 484$,  $484 − 6 = 478$" },
+        { heading: "Multiplying by a 2-digit number", body: "Break the second number into tens and ones. Multiply by each part and add the answers.", example: "$24 × 13 = 24 × 10 + 24 × 3 = 240 + 72 = 312$" },
+        { heading: "Dividing", body: "Division is the opposite of multiplication. To work out 156 ÷ 12 ask: 12 × ? = 156. Then check by multiplying back.", example: "$156 ÷ 12 = 13$  because  $12 × 13 = 156$" },
+        { heading: "BODMAS: the right order", body: "When a calculation has several operations, we must do them in the right order. Brackets first. Then powers. Then multiply and divide. Last, add and subtract.", example: "$5 + 4 × 3 = 5 + 12 = 17$   (not 27!)" },
+      ],
+      altExplain: [
+        { heading: "BODMAS as a recipe", body: "A recipe has an order: you must mix before you bake. Maths is the same. Multiplying 'sticks' numbers together more strongly than adding does, so in $5 + 4 × 3$ the $4 × 3$ is done first." },
+        { heading: "Division as sharing", body: "$156 ÷ 12$ means: if 156 sweets are shared into groups of 12, how many groups are there? Count up in 12s: 12, 24, 36... until you reach 156. Check how many jumps you made." },
+      ],
+      workedExamples: [
+        {
+          title: "BODMAS",
+          problem: "Calculate $20 − (3 + 2) × 2^2$",
+          steps: [
+            { title: "Brackets first", say: "3 + 2 = 5.", math: "$20 − 5 × 2^2$", ask: { prompt: "What is 3 + 2?", answer: "5" } },
+            { title: "Powers next", say: "2² means 2 × 2 = 4.", math: "$20 − 5 × 4$" },
+            { title: "Multiply", say: "5 × 4 = 20.", math: "$20 − 20$" },
+            { title: "Subtract", say: "20 − 20 = 0.", math: "$0$" },
+          ],
+          answer: "$0$",
+        },
+      ],
+      mistakes: [
+        { tag: "wn.wrongOperation", mistake: "Using the wrong operation (adding when the question says subtract).", fix: "Underline the operation sign before you start." },
+        { tag: "wn.forgotTens", mistake: "Multiplying by the ones only and forgetting the tens part.", fix: "Break the second number into tens and ones and do BOTH parts." },
+        { tag: "wn.bodmas.leftToRight", mistake: "Adding before multiplying, working strictly left to right.", fix: "Multiplication and division come before addition and subtraction." },
+      ],
+    },
+    {
+      id: "wn-factors",
+      name: "Factors, multiples and primes",
+      objectives: ["I can find factors and multiples of a number.", "I can say whether a number is prime.", "I can write a number as a product of prime factors.", "I can find the LCM and HCF of two numbers."],
+      priorKnowledge: ["Times tables", "Division facts"],
+      prerequisites: ["wn-calc"],
+      generator: "wn-factors",
+      realWorld: "Two buses leave the station every 12 and 18 minutes. The LCM tells us when they leave together again.",
+      terms: [
+        { word: "Factor", meaning: "A number that divides into another number exactly, with nothing left over." },
+        { word: "Multiple", meaning: "A number you get when you multiply by 1, 2, 3, ... (the 'times table' of a number)." },
+        { word: "Prime number", meaning: "A number with exactly two factors: 1 and itself (2, 3, 5, 7, 11...)." },
+        { word: "Composite number", meaning: "A number with more than two factors." },
+        { word: "HCF", meaning: "Highest Common Factor: the biggest number that is a factor of both numbers." },
+        { word: "LCM", meaning: "Lowest Common Multiple: the smallest number that is a multiple of both numbers." },
+      ],
+      rules: ["1 is neither prime nor composite.", "2 is the only even prime number.", "HCF: multiply the prime factors both numbers SHARE.", "LCM: multiply ALL the prime factors, using the highest power of each."],
+      explain: [
+        { heading: "Factors", body: "A factor divides into a number exactly. Factors come in pairs. For 12: 1 × 12, 2 × 6 and 3 × 4. So the factors of 12 are 1, 2, 3, 4, 6 and 12.", example: "$12 = 1 × 12 = 2 × 6 = 3 × 4$" },
+        { heading: "Multiples", body: "Multiples are the answers in a times table. The multiples of 4 are 4, 8, 12, 16, 20... They go on forever.", example: "$4; 8; 12; 16; 20; ...$" },
+        { heading: "Prime numbers", body: "A prime number has exactly TWO factors: 1 and itself. The number 7 has only 1 and 7, so it is prime. The number 9 has 1, 3 and 9, so it is NOT prime.", example: "$2; 3; 5; 7; 11; 13; 17; 19; ...$" },
+        { heading: "Prime factorisation (a factor tree)", body: "Split a number into two factors. Keep splitting until every number at the end is prime. Then write them as a multiplication.", example: "$60 = 2 × 2 × 3 × 5 = 2^2 × 3 × 5$" },
+        { heading: "HCF and LCM", body: "Write both numbers as prime factors. For the HCF, take only the primes they SHARE. For the LCM, take ALL the primes, using the highest power of each.", example: "$12 = 2^2 × 3$   $18 = 2 × 3^2$   HCF $= 2 × 3 = 6$   LCM $= 2^2 × 3^2 = 36$" },
+      ],
+      altExplain: [
+        { heading: "Factors as rectangles", body: "Imagine 12 squares. How many different rectangles can you make? 1 by 12, 2 by 6, 3 by 4. The sides of the rectangles are the factors of 12. A PRIME number can only make one rectangle: a long thin line." },
+        { heading: "LCM with two clocks", body: "One light flashes every 4 seconds: 4, 8, 12, 16... Another flashes every 6 seconds: 6, 12, 18... The first time they flash together is at 12 seconds. That is the LCM of 4 and 6." },
+      ],
+      workedExamples: [
+        {
+          title: "HCF and LCM of 12 and 18",
+          problem: "Find the HCF and LCM of 12 and 18.",
+          steps: [
+            { title: "Prime factors of 12", say: "12 = 2 × 6 = 2 × 2 × 3.", math: "$12 = 2^2 × 3$" },
+            { title: "Prime factors of 18", say: "18 = 2 × 9 = 2 × 3 × 3.", math: "$18 = 2 × 3^2$" },
+            { title: "HCF: what they share", say: "Both have one 2 and one 3 in common.", math: "$HCF = 2 × 3 = 6$", ask: { prompt: "What is 2 × 3?", answer: "6" } },
+            { title: "LCM: everything, highest powers", say: "The highest power of 2 is 2². The highest power of 3 is 3².", math: "$LCM = 2^2 × 3^2 = 4 × 9 = 36$" },
+          ],
+          answer: "HCF = 6, LCM = 36",
+        },
+      ],
+      mistakes: [
+        { tag: "wn.notPrime", mistake: "Stopping the factor tree at a number that is not prime (like 4 or 9).", fix: "Keep splitting until every number at the end is prime." },
+        { tag: "wn.hcfLcmMixup", mistake: "Mixing up HCF and LCM.", fix: "HCF is a small number (it divides both). LCM is a bigger number (both divide into it)." },
+      ],
+    },
+  ],
+};

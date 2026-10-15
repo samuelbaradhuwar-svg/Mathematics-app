@@ -1,0 +1,48 @@
+.card {
+  background: var(--card);
+  color: var(--card-foreground);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  min-width: 0;
+}
+
+.padded {
+  padding: var(--spacing-4);
+}
+
+@media (min-width: 640px) {
+  .padded {
+    padding: var(--spacing-6);
+  }
+}
+
+.soft {
+  background: var(--surface);
+  box-shadow: none;
+}
+
+.primary {
+  background: linear-gradient(140deg, var(--hero-start), var(--hero-end));
+  color: var(--primary-foreground);
+  border-color: transparent;
+  box-shadow: var(--shadow-md);
+}
+
+.warm {
+  background: var(--status-help-soft);
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.success {
+  background: var(--soft-correct);
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.help {
+  background: var(--soft-wrong);
+  border-color: transparent;
+  box-shadow: none;
+}

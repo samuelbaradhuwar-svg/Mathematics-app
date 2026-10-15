@@ -1,0 +1,125 @@
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  display: grid;
+  gap: var(--spacing-4);
+}
+
+.page > :first-child {
+  margin-bottom: 0;
+}
+
+.h2 {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.h3 {
+  margin: var(--spacing-3) 0 var(--spacing-1);
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.muted {
+  margin: 0;
+  color: var(--muted-foreground);
+  font-size: 0.98rem;
+}
+
+.refresher {
+  display: grid;
+  gap: var(--spacing-2);
+}
+
+.levels {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-2);
+}
+
+.level {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-height: 58px;
+  padding: var(--spacing-2);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--card);
+  color: var(--foreground);
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.level svg {
+  color: var(--status-understood);
+}
+
+.levelOn {
+  border-color: var(--primary);
+  background: var(--status-practising-soft);
+  color: var(--primary);
+}
+
+.rec {
+  font-family: var(--font-family-base);
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--status-help);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.meter {
+  display: grid;
+  gap: var(--spacing-2);
+}
+
+.meterTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-2);
+}
+
+.dots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  flex: 1;
+  height: 12px;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+}
+
+.dotOn {
+  background: var(--status-understood);
+}
+
+.break {
+  display: flex;
+  gap: var(--spacing-3);
+  align-items: flex-start;
+}
+
+.breakBtns {
+  display: flex;
+  gap: var(--spacing-2);
+  flex-wrap: wrap;
+  margin-top: var(--spacing-3);
+}
+
+.links {
+  display: grid;
+  gap: var(--spacing-1);
+  justify-items: start;
+}

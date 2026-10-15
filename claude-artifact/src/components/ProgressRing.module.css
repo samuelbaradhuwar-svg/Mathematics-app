@@ -1,0 +1,31 @@
+.ring {
+  position: relative;
+  flex: none;
+}
+
+.arc {
+  transition: stroke-dashoffset 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.center {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+
+.label {
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  font-size: 1.9rem;
+  line-height: 1;
+  color: var(--foreground);
+}
+
+.sublabel {
+  margin-top: 4px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--muted-foreground);
+}

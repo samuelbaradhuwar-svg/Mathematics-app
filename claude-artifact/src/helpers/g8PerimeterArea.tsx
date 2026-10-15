@@ -1,0 +1,113 @@
+import type { Topic } from "./curriculumTypes";
+
+export const g8PerimeterArea: Topic = {
+  id: "perimeter-area",
+  name: "Perimeter and area",
+  strand: "Measurement",
+  term: 4,
+  order: 18,
+  icon: "Square",
+  summary: "The distance around shapes (perimeter) and the space inside them (area), including circles.",
+  whatYouLearn: ["Perimeter of rectangles, squares and composite shapes", "Area of rectangles, squares and triangles", "Circumference and area of circles"],
+  priorKnowledge: ["Multiplication and addition", "Equations (for missing sides)", "Units of length"],
+  prerequisites: ["measurement", "algebraic-equations"],
+  videoQueries: ["Grade 8 mathematics perimeter and area CAPS South Africa", "Grade 8 maths area of triangle circle circumference South Africa"],
+  assessmentNote: "Tests usually include perimeter and area of rectangles, triangles and circles, composite shapes and missing sides.",
+  placement: { source: "secondary-sources", note: "Perimeter and area are taught in the later terms of Grade 8; circles (circumference and area) are included here as in Grade 8 resources." },
+  subtopics: [
+    {
+      id: "pa-perimeter",
+      name: "Perimeter",
+      objectives: ["I can find the perimeter of a rectangle or square.", "I can find a missing side from the perimeter.", "I can find the perimeter of a shape with a corner cut out."],
+      priorKnowledge: ["Adding", "Units of length"],
+      prerequisites: [],
+      generator: "pa-perimeter",
+      realWorld: "How much fencing is needed to go around a garden.",
+      terms: [{ word: "Perimeter", meaning: "The total distance around the outside of a shape." }],
+      rules: ["Perimeter = add up all the sides.", "Rectangle: 2 × (length + width).", "Square: 4 × side."],
+      explain: [
+        { heading: "The distance around", body: "Perimeter is how far you would walk if you walked all the way round the edge of a shape. Add the lengths of all the sides.", visual: { type: "gridrect", w: 6, h: 4, unit: "cm" }, example: "$6 + 4 + 6 + 4 = 20 cm$" },
+        { heading: "Rectangle shortcut", body: "A rectangle has two long sides and two short sides. Perimeter = 2 × (length + width).", example: "$2 × (6 + 4) = 20$" },
+        { heading: "Missing side", body: "If you know the perimeter, half of it is length + width. Subtract the side you know.", example: "Perimeter 30, width 5: half = 15, so length = 15 − 5 = 10" },
+      ],
+      altExplain: [{ heading: "Walk around the field", body: "Imagine walking around the edge of a soccer field. Everything you walk past is the perimeter. You add every side." }],
+      workedExamples: [
+        {
+          title: "Missing side",
+          problem: "A rectangle has a perimeter of 36 cm and a width of 5 cm. Find the length.",
+          steps: [
+            { title: "Halve the perimeter", say: "36 ÷ 2 = 18. This is length + width.", math: "$18$", ask: { prompt: "What is 36 ÷ 2?", answer: "18" } },
+            { title: "Subtract the width", say: "18 − 5 = 13.", math: "$13 cm$" },
+          ],
+          answer: "$13 cm$",
+        },
+      ],
+      mistakes: [{ tag: "pa.areaForPerimeter", mistake: "Multiplying length × width for perimeter.", fix: "Perimeter is the distance AROUND: ADD the sides." }],
+    },
+    {
+      id: "pa-area",
+      name: "Area",
+      objectives: ["I can find the area of a rectangle, square and triangle.", "I can find the area of a composite shape.", "I can find a missing side from the area."],
+      priorKnowledge: ["Multiplication", "Perimeter"],
+      prerequisites: ["pa-perimeter"],
+      generator: "pa-area",
+      realWorld: "How much paint or carpet is needed for a room.",
+      terms: [{ word: "Area", meaning: "The amount of flat space inside a shape, measured in square units like cm²." }, { word: "Perpendicular height", meaning: "The height measured at 90° to the base." }],
+      rules: ["Rectangle: length × width.", "Square: side × side.", "Triangle: ½ × base × perpendicular height."],
+      explain: [
+        { heading: "Squares inside the shape", body: "Area counts how many 1 cm by 1 cm squares fit inside the shape. A rectangle with 4 rows of 6 squares has area 4 × 6 = 24 cm².", visual: { type: "gridrect", w: 6, h: 4, unit: "cm" }, example: "$6 × 4 = 24 cm^2$" },
+        { heading: "Triangle: half a rectangle", body: "A triangle is half of a rectangle with the same base and height. Area = ½ × base × height. The height must be perpendicular (at 90°) to the base.", example: "base 8, height 5:  $½ × 8 × 5 = 20 cm^2$" },
+        { heading: "Composite shapes", body: "Split the shape into rectangles and triangles, find each area and add. Or find a big rectangle and subtract the missing part.", example: "Big rectangle $12 × 9 = 108$, cut-out $5 × 4 = 20$:  $108 − 20 = 88$" },
+      ],
+      altExplain: [{ heading: "Cut and rearrange", body: "Cut a rectangle along its diagonal. You get two identical triangles. Each triangle is exactly half of the rectangle's area." }],
+      workedExamples: [
+        {
+          title: "Triangle",
+          problem: "A triangle has a base of 10 cm and a perpendicular height of 6 cm. Find the area.",
+          steps: [
+            { title: "Formula", say: "Area = ½ × base × height.", math: "$½ × 10 × 6$" },
+            { title: "Multiply", say: "10 × 6 = 60.", math: "$60$", ask: { prompt: "What is 10 × 6?", answer: "60" } },
+            { title: "Halve", say: "60 ÷ 2 = 30.", math: "$30 cm^2$" },
+          ],
+          answer: "$30 cm^2$",
+        },
+      ],
+      mistakes: [{ tag: "pa.forgotHalf", mistake: "Forgetting the ½ for a triangle.", fix: "A triangle is HALF a rectangle." }],
+    },
+    {
+      id: "pa-circle",
+      name: "Circles",
+      objectives: ["I can name the parts of a circle.", "I can find the circumference using π.", "I can find the area of a circle."],
+      priorKnowledge: ["Multiplying decimals", "Squares"],
+      prerequisites: ["pa-area", "dec-muldiv"],
+      generator: "pa-circle",
+      realWorld: "Finding how far a wheel travels in one turn (its circumference).",
+      terms: [
+        { word: "Radius (r)", meaning: "The distance from the centre to the edge." },
+        { word: "Diameter (d)", meaning: "The distance across the circle through the centre. d = 2r." },
+        { word: "Circumference", meaning: "The distance around the circle." },
+        { word: "π (pi)", meaning: "A special number, about 3,14, that links the diameter to the circumference." },
+      ],
+      rules: ["d = 2 × r", "Circumference = π × d", "Area = π × r × r"],
+      explain: [
+        { heading: "Parts of a circle", body: "The radius goes from the centre to the edge. The diameter goes all the way across through the centre, so it is twice the radius.", visual: { type: "circle", r: 5 } },
+        { heading: "Circumference", body: "The distance around a circle is a bit more than 3 times the diameter. That 'a bit more than 3' is the number π ≈ 3,14.", example: "$C = π × d$.  d = 10:  $C = 3,14 × 10 = 31,4$" },
+        { heading: "Area of a circle", body: "Area = π × r × r. Square the radius FIRST, then multiply by 3,14.", example: "r = 4:  $A = 3,14 × 4 × 4 = 3,14 × 16 = 50,24$" },
+      ],
+      altExplain: [{ heading: "Roll a tin", body: "Roll a tin of beans one full turn along a ruler. The distance it rolls is its circumference. Measure across the tin: the diameter. You will find the circumference is a bit more than 3 times the diameter." }],
+      workedExamples: [
+        {
+          title: "Area of a circle",
+          problem: "Use π ≈ 3,14 to find the area of a circle with radius 5 cm.",
+          steps: [
+            { title: "Formula", say: "A = π × r × r.", math: "$A = 3,14 × 5 × 5$" },
+            { title: "Square the radius first", say: "5 × 5 = 25.", math: "$3,14 × 25$", ask: { prompt: "What is 5 × 5?", answer: "25" } },
+            { title: "Multiply", say: "3,14 × 25 = 78,5.", math: "$78,5 cm^2$" },
+          ],
+          answer: "$78,5 cm^2$",
+        },
+      ],
+      mistakes: [{ tag: "pa.circle.diameterMix", mistake: "Using the diameter instead of the radius in the area formula.", fix: "Area uses the RADIUS. Halve the diameter first." }],
+    },
+  ],
+};

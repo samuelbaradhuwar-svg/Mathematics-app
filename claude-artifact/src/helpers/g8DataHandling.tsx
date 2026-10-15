@@ -1,0 +1,121 @@
+import type { Topic } from "./curriculumTypes";
+
+export const g8DataHandling: Topic = {
+  id: "data-handling",
+  name: "Data handling",
+  strand: "Data Handling",
+  term: 3,
+  order: 15,
+  icon: "BarChart3",
+  summary: "Collecting and organising data, mean, median, mode and range, and reading and choosing graphs.",
+  whatYouLearn: ["Organising data in tallies and frequency tables", "Finding mean, median, mode and range", "Reading and choosing bar graphs, pie charts, line graphs and histograms"],
+  priorKnowledge: ["Whole number calculations", "Fractions and percentages"],
+  prerequisites: ["whole-numbers", "percentages"],
+  videoQueries: ["Grade 8 mathematics data handling CAPS South Africa", "Grade 8 maths mean median mode range South Africa", "Grade 8 maths bar graph pie chart histogram South Africa"],
+  assessmentNote: "Tests usually include frequency tables, calculating mean/median/mode/range and answering questions about graphs.",
+  placement: { source: "author-knowledge", note: "Data handling is in Term 3 here. CAPS cycles through data handling in more than one term; check the school plan." },
+  subtopics: [
+    {
+      id: "dh-organise",
+      name: "Organising data",
+      objectives: ["I can count how often a value appears (frequency).", "I can use frequency tables.", "I can group data into class intervals."],
+      priorKnowledge: ["Counting and tallying"],
+      prerequisites: [],
+      generator: "dh-organise",
+      realWorld: "A shop counting how many of each flavour of ice-cream were sold.",
+      terms: [
+        { word: "Data", meaning: "Information, usually numbers, that we collect." },
+        { word: "Frequency", meaning: "How many times a value appears." },
+        { word: "Tally", meaning: "Marks used to count (groups of five)." },
+        { word: "Class interval", meaning: "A range of values, like 10–19, used to group data." },
+      ],
+      rules: ["Count carefully and tick off every value.", "The frequencies must add up to the total number of values."],
+      explain: [
+        { heading: "Tally and frequency", body: "Go through the data one value at a time and make a tally mark for each. The number of tallies for a value is its **frequency**.", example: "Data: 2; 3; 2; 5; 2 → frequency of 2 is 3" },
+        { heading: "Frequency table", body: "A frequency table lists each value or category with its frequency. Add up the frequencies to check you counted every value." },
+        { heading: "Grouped data", body: "When there are many different values, group them into class intervals such as 0–9, 10–19, 20–29. Every value goes into exactly ONE class." },
+      ],
+      altExplain: [{ heading: "Sorting laundry", body: "Sort the clothes into piles: socks, shirts, shorts. Counting each pile is exactly what a frequency table does for data." }],
+      workedExamples: [
+        {
+          title: "Frequency",
+          problem: "Data: 2; 3; 3; 5; 3; 2. What is the frequency of 3?",
+          steps: [
+            { title: "Tick each 3", say: "The 3s are in positions 2, 3 and 5." },
+            { title: "Count", say: "There are 3 of them.", ask: { prompt: "How many 3s are there?", answer: "3" } },
+          ],
+          answer: "$3$",
+        },
+      ],
+      mistakes: [{ tag: "dh.organise.missed", mistake: "Missing or double-counting a value.", fix: "Tick every value as you count it, and check that the frequencies add up to the total." }],
+    },
+    {
+      id: "dh-average",
+      name: "Mean, median, mode and range",
+      objectives: ["I can find the mean, median, mode and range of a data set.", "I can find a missing value if I know the mean."],
+      priorKnowledge: ["Adding and dividing", "Ordering numbers"],
+      prerequisites: ["wn-calc"],
+      generator: "dh-average",
+      realWorld: "Your average test mark, the middle price in a shop or the most popular shoe size.",
+      terms: [
+        { word: "Mean", meaning: "The average: total of all the values ÷ how many values there are." },
+        { word: "Median", meaning: "The middle value when the values are in order." },
+        { word: "Mode", meaning: "The value that appears most often." },
+        { word: "Range", meaning: "The biggest value minus the smallest value. It shows how spread out the data is." },
+      ],
+      rules: ["Mean = total ÷ number of values.", "Median: put in order, pick the middle (or the average of the middle two).", "Mode: the most frequent value.", "Range = biggest − smallest."],
+      explain: [
+        { heading: "Mean: share it out equally", body: "Add all the values. Divide by how many values there are.", example: "$4; 6; 8; 10; 12$:  total 40,  40 ÷ 5 = 8" },
+        { heading: "Median: the middle", body: "Put the values in order from smallest to biggest. The median is the middle one. If there are two middle values, find the number halfway between them.", example: "$3; 5; 8; 9; 12$:  median = 8" },
+        { heading: "Mode and range", body: "The mode is the value that appears most often. The range is the biggest value minus the smallest.", example: "$2; 3; 3; 3; 7$: mode = 3, range = 7 − 2 = 5" },
+      ],
+      altExplain: [{ heading: "Mean as levelling", body: "Imagine stacks of coins of different heights. Move coins from the tall stacks to the short ones until all stacks are the same height. That equal height is the mean." }],
+      workedExamples: [
+        {
+          title: "Missing value",
+          problem: "The mean of 5 numbers is 12. Four of them are 10, 14, 9 and 13. Find the fifth.",
+          steps: [
+            { title: "Total of all 5", say: "mean × 5 = 12 × 5 = 60.", math: "$12 × 5 = 60$", ask: { prompt: "What is 12 × 5?", answer: "60" } },
+            { title: "Total of the four known", say: "10 + 14 + 9 + 13 = 46.", math: "$46$" },
+            { title: "Subtract", say: "60 − 46 = 14.", math: "$14$" },
+          ],
+          answer: "$14$",
+        },
+      ],
+      mistakes: [{ tag: "dh.average.medianUnsorted", mistake: "Taking the middle number of an UNORDERED list as the median.", fix: "Always put the numbers in order first." }],
+    },
+    {
+      id: "dh-graphs",
+      name: "Reading and choosing graphs",
+      objectives: ["I can read bar graphs and pie charts.", "I can choose the best graph for the data."],
+      priorKnowledge: ["Percentages", "Reading scales"],
+      prerequisites: ["pct-of"],
+      generator: "dh-graphs",
+      realWorld: "News reports use graphs to show how many people voted for each party.",
+      terms: [
+        { word: "Bar graph", meaning: "Bars of different heights to compare groups." },
+        { word: "Pie chart", meaning: "A circle divided into slices to show parts of a whole." },
+        { word: "Histogram", meaning: "A bar graph with no gaps between the bars, used for grouped data." },
+      ],
+      rules: ["Read the title, axes and scale first.", "In a pie chart the slices add up to 100%.", "Use a line graph to show change over time."],
+      explain: [
+        { heading: "Bar graphs", body: "The height of each bar shows the number. Read the number on the vertical axis at the top of the bar.", visual: { type: "bars", labels: ["Soccer", "Netball", "Rugby"], values: [12, 8, 5], title: "Favourite sport" } },
+        { heading: "Pie charts", body: "A pie chart shows parts of a whole. A bigger slice is a bigger part. The slices add up to 100%. To find how many are in a slice, find that percentage of the total.", visual: { type: "pie", labels: ["A 50%", "B 30%", "C 20%"], values: [50, 30, 20] } },
+        { heading: "Choosing the right graph", body: "Bar graph: compare groups. Line graph: change over time. Pie chart: parts of a whole. Histogram: grouped data in classes." },
+      ],
+      altExplain: [{ heading: "A pizza", body: "A pie chart is a pizza cut into slices. If one slice is 25% it is a quarter of the pizza. If 200 people were asked, that slice stands for 25% of 200 = 50 people." }],
+      workedExamples: [
+        {
+          title: "Pie chart",
+          problem: "200 learners were asked about sport. 35% chose football. How many chose football?",
+          steps: [
+            { title: "Find 35% of 200", say: "1% of 200 is 2.", math: "$200 ÷ 100 = 2$", ask: { prompt: "What is 200 ÷ 100?", answer: "2" } },
+            { title: "Multiply by 35", say: "2 × 35 = 70.", math: "$70$" },
+          ],
+          answer: "$70$ learners",
+        },
+      ],
+      mistakes: [{ tag: "dh.graphs.scale", mistake: "Misreading the scale (counting each gridline as 1 when it is 2).", fix: "Check what each step on the axis is worth before you read." }],
+    },
+  ],
+};
