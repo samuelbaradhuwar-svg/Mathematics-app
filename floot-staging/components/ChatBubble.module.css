@@ -1,0 +1,71 @@
+.row {
+  display: flex;
+  gap: var(--spacing-2);
+  align-items: flex-end;
+  animation: rise var(--animation-duration-normal) ease-out;
+}
+
+.user {
+  justify-content: flex-end;
+}
+
+.avatar {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.bubble {
+  max-width: min(100%, 560px);
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  min-width: 0;
+}
+
+.tutor .bubble {
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-bottom-left-radius: 6px;
+}
+
+.user .bubble {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  border-bottom-right-radius: 6px;
+}
+
+.error {
+  background: var(--soft-wrong);
+  border-color: transparent;
+}
+
+.plain {
+  margin: 0;
+  font-size: 1.08rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .row {
+    animation: none;
+  }
+}

@@ -1,0 +1,82 @@
+.wrap {
+  display: grid;
+  gap: var(--spacing-4);
+}
+
+.problem {
+  padding: var(--spacing-4);
+  background: var(--card);
+  border: 2px solid var(--primary);
+  border-radius: var(--radius-lg);
+}
+
+.promptText {
+  font-size: 1.25rem;
+}
+
+.steps {
+  display: grid;
+  gap: var(--spacing-3);
+}
+
+.ask {
+  margin-top: var(--spacing-3);
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--radius-md);
+  background: var(--status-help-soft);
+}
+
+.askLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 var(--spacing-1);
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  color: var(--status-help);
+}
+
+.askPrompt {
+  font-weight: 700;
+}
+
+.askRow {
+  display: flex;
+  gap: var(--spacing-2);
+  margin-top: var(--spacing-3);
+}
+
+.askInput {
+  flex: 1;
+  min-height: 56px;
+  font-size: 1.25rem;
+  font-family: var(--font-family-math);
+}
+
+.wrong {
+  margin: var(--spacing-2) 0 0;
+  font-weight: 700;
+}
+
+.right {
+  margin: var(--spacing-2) 0 0;
+  font-weight: 800;
+  color: var(--status-understood);
+}
+
+.footer {
+  display: grid;
+  gap: var(--spacing-3);
+}
+
+.answer {
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--radius-md);
+  background: var(--soft-correct);
+  font-weight: 800;
+}
+
+.big {
+  min-height: 60px;
+  font-size: 1.2rem;
+}

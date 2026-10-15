@@ -1,0 +1,152 @@
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  display: grid;
+  gap: var(--spacing-4);
+}
+
+.stack {
+  display: grid;
+  gap: var(--spacing-3);
+}
+
+.capture {
+  display: grid;
+  gap: var(--spacing-4);
+}
+
+.drop {
+  display: grid;
+  justify-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-6) var(--spacing-4);
+  border: 2.5px dashed var(--border);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  color: var(--muted-foreground);
+}
+
+.drop p {
+  margin: 0;
+  max-width: 24em;
+}
+
+.preview {
+  width: 100%;
+  max-height: 360px;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.btns {
+  display: grid;
+  gap: var(--spacing-2);
+}
+
+.btns > * {
+  min-height: 56px;
+}
+
+.go {
+  font-size: 1.1rem;
+}
+
+.label {
+  display: grid;
+  gap: 6px;
+  font-weight: 700;
+}
+
+.noteInput,
+.textarea {
+  width: 100%;
+  padding: var(--spacing-3);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--card);
+  color: var(--foreground);
+  font-family: var(--font-family-math);
+  font-size: 1.1rem;
+}
+
+.textarea {
+  resize: vertical;
+}
+
+.privacy {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted-foreground);
+  text-align: center;
+}
+
+.busy {
+  display: grid;
+  justify-items: center;
+  gap: var(--spacing-3);
+  text-align: center;
+  padding-block: var(--spacing-8);
+}
+
+.h2 {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.muted {
+  margin: 0;
+  color: var(--muted-foreground);
+}
+
+.error,
+.warn {
+  display: flex;
+  gap: var(--spacing-2);
+  align-items: flex-start;
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--radius-md);
+  font-weight: 700;
+}
+
+.error {
+  background: var(--soft-wrong);
+}
+
+.warn {
+  background: var(--status-help-soft);
+}
+
+.seen {
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--radius-md);
+  background: var(--status-practising-soft);
+  font-size: 1.3rem;
+  overflow-x: auto;
+}
+
+.qList,
+.opts {
+  display: grid;
+  gap: var(--spacing-2);
+}
+
+.qBtn,
+.opt {
+  min-height: 52px;
+  padding: var(--spacing-2) var(--spacing-4);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--card);
+  color: var(--foreground);
+  font-size: 1.05rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.qOn {
+  border-color: var(--primary);
+  background: var(--status-practising-soft);
+}

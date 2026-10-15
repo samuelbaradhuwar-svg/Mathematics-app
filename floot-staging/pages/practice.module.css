@@ -1,0 +1,157 @@
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  display: grid;
+  gap: var(--spacing-4);
+}
+
+.rec {
+  display: grid;
+  gap: var(--spacing-2);
+}
+
+.recEyebrow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  font-weight: 800;
+  opacity: 0.9;
+}
+
+.recTitle {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+
+.recText {
+  margin: 0 0 var(--spacing-2);
+  font-size: 1.05rem;
+}
+
+.cta {
+  min-height: 58px;
+  font-size: 1.15rem;
+  background: var(--accent);
+  color: var(--accent-foreground);
+  border: none;
+}
+
+.cta:hover {
+  background: var(--accent);
+  filter: brightness(1.05);
+}
+
+.warm {
+  display: grid;
+  gap: var(--spacing-2);
+}
+
+.h2 {
+  margin: var(--spacing-2) 0 0;
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  font-size: 1.35rem;
+}
+
+.muted {
+  margin: 0;
+  color: var(--muted-foreground);
+}
+
+.warmList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+}
+
+.warmBtn {
+  min-height: 48px;
+}
+
+.topics {
+  display: grid;
+  gap: var(--spacing-2);
+}
+
+.topic {
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.summary {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  min-height: 64px;
+  padding: var(--spacing-2) var(--spacing-4);
+  cursor: pointer;
+  list-style: none;
+}
+
+.summary::-webkit-details-marker {
+  display: none;
+}
+
+.icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius);
+  background: var(--status-practising-soft);
+  color: var(--primary);
+}
+
+.topicName {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.subs {
+  margin: 0;
+  padding: 0 var(--spacing-3) var(--spacing-3);
+  list-style: none;
+  display: grid;
+  gap: var(--spacing-2);
+}
+
+.sub {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-2);
+  min-height: 52px;
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--foreground);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.sub:hover {
+  background: var(--status-practising-soft);
+}
+
+.subMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  flex: none;
+  font-size: 0.82rem;
+  color: var(--muted-foreground);
+}
+
+.subName {
+  min-width: 0;
+}

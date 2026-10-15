@@ -1,0 +1,9 @@
+{
+  "name": "Judah's Personal AI Maths Tutor",
+  "short_name": "Judah's Maths",
+  "description": "A patient, step-by-step maths tutor for Grade 8 (South African CAPS).",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fbf7ee",
+  "theme_color": "#3f4bb8"
+}

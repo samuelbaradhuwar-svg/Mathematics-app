@@ -1,0 +1,150 @@
+.stack {
+  display: grid;
+  gap: var(--spacing-4);
+}
+
+.gate {
+  display: grid;
+  place-items: center;
+  min-height: 60dvh;
+}
+
+.gateCard {
+  display: grid;
+  justify-items: center;
+  gap: var(--spacing-3);
+  width: min(420px, 100%);
+  text-align: center;
+}
+
+.pinInput {
+  min-height: 60px;
+  text-align: center;
+  font-size: 1.6rem;
+  letter-spacing: 0.4em;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+}
+
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-3);
+  flex-wrap: wrap;
+}
+
+.muted {
+  margin: 0;
+  color: var(--muted-foreground);
+  font-size: 0.92rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--spacing-3);
+}
+
+.stat {
+  display: grid;
+  gap: 2px;
+  text-align: center;
+}
+
+.num {
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  font-size: 1.9rem;
+}
+
+.section {
+  display: grid;
+  gap: var(--spacing-3);
+}
+
+.h2 {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-3);
+}
+
+.pillItem {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: 1.1rem;
+}
+
+.list {
+  margin: 0;
+  padding-left: 1.2em;
+  display: grid;
+  gap: var(--spacing-3);
+}
+
+.item {
+  display: grid;
+  gap: 2px;
+}
+
+.tip {
+  color: var(--muted-foreground);
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.table th,
+.table td {
+  padding: var(--spacing-2);
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.topicRow td {
+  background: var(--surface);
+}
+
+.row {
+  display: flex;
+  gap: var(--spacing-2);
+}
+
+.row > input {
+  flex: 1;
+}
+
+.err {
+  margin: 0;
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--radius);
+  background: var(--soft-wrong);
+  font-weight: 700;
+}
+
+.ok {
+  margin: 0;
+  font-weight: 700;
+  color: var(--status-understood);
+}

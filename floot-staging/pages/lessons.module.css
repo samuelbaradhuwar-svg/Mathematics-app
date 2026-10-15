@@ -1,0 +1,48 @@
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.filters {
+  display: flex;
+  gap: var(--spacing-2);
+  overflow-x: auto;
+  padding-bottom: var(--spacing-2);
+  margin-bottom: var(--spacing-4);
+  scrollbar-width: none;
+}
+
+.filters::-webkit-scrollbar {
+  display: none;
+}
+
+.chip {
+  flex: none;
+  min-height: 44px;
+  padding: 0 var(--spacing-4);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-full);
+  background: var(--card);
+  color: var(--foreground);
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.chipOn {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.list {
+  display: grid;
+  gap: var(--spacing-3);
+}
+
+.note {
+  margin: var(--spacing-6) 0 0;
+  font-size: 0.92rem;
+  color: var(--muted-foreground);
+}
