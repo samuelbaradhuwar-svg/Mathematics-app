@@ -149,7 +149,7 @@ const ScanPage: React.FC = () => {
           <input ref={cameraRef} type="file" accept="image/*" capture="environment" hidden onChange={(e) => onFile(e.target.files?.[0])} />
           <input ref={galleryRef} type="file" accept="image/*" hidden onChange={(e) => onFile(e.target.files?.[0])} />
           <div className={styles.btns}>
-            <Button size="lg" variant={image ? "outline" : "default"} onClick={() => cameraRef.current?.click()}>
+            <Button size="lg" variant={image ? "outline" : "primary"} onClick={() => cameraRef.current?.click()}>
               <Camera size={20} /> {image ? "Take another photo" : "Take a photo"}
             </Button>
             <Button size="lg" variant="outline" onClick={() => galleryRef.current?.click()}>

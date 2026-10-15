@@ -16,10 +16,10 @@ import { StepCard } from "./StepCard";
 import { VideoList } from "./VideoList";
 import styles from "./LessonPlayer.module.css";
 
-type Stage = "explain" | "see" | "together" | "try" | "check" | "done";
+type Stage = "explain" | "demonstrate" | "together" | "try" | "check" | "done";
 const STAGES: { id: Exclude<Stage, "done">; label: string }[] = [
   { id: "explain", label: "EXPLAIN" },
-  { id: "see", label: "SEE IT" },
+  { id: "demonstrate", label: "SEE IT" },
   { id: "together", label: "TOGETHER" },
   { id: "try", label: "YOU TRY" },
   { id: "check", label: "CHECK" },
@@ -235,7 +235,7 @@ export const LessonPlayer: React.FC<{ subtopicId: string }> = ({ subtopicId }) =
                   size="lg"
                   className={styles.primaryBtn}
                   onClick={() => {
-                    setStage("see");
+                    setStage("demonstrate");
                     setStepsShown(0);
                     setExIdx(0);
                   }}
@@ -248,7 +248,7 @@ export const LessonPlayer: React.FC<{ subtopicId: string }> = ({ subtopicId }) =
         </div>
       ) : null}
 
-      {stage === "see" && example ? (
+      {stage === "demonstrate" && example ? (
         <div className={styles.stageBody}>
           <Card className={styles.lessonCard}>
             <h2 className={styles.h2}>{example.title}</h2>
